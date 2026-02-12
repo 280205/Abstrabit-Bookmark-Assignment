@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 dark:bg-gray-950;
+    @apply min-h-screen;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl;
+    @apply border border-white/20 dark:border-gray-700/50;
+    @apply shadow-2xl shadow-blue-500/10 dark:shadow-blue-500/20;
+  }
+  
+  .glass-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:scale-[1.02];
+    @apply hover:border-blue-300/50 dark:hover:border-blue-500/50;
+  }
+  
+  .gradient-text {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+  }
+  to {
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+  }
+}
